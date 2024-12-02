@@ -1,0 +1,66 @@
+{
+  "name": "@innovixx/payload-field-boilerplate",
+  "version": "0.0.1",
+  "homepage:": "https://innovixx.co.uk",
+  "repository": "git@github.com:innovixx/payload-field-boilerplate.git",
+  "description": "This Git repo provides a boilerplate for creating a payload-field. It includes all the necessary files and dependencies to set up a basic structure for developing a custom field. Developers can save time by using this boilerplate as a starting point for their own field development.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && yarn copy:scss",
+    "watch": "nodemon --watch src -e ts,tsx,scss --exec \"yarn build\"",
+    "copy:scss": "copyfiles -u 1 \"src/**/*.scss\" dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix --ext .ts,.tsx src"
+  },
+  "keywords": [
+    "payload",
+    "cms",
+    "plugin",
+    "typescript",
+    "react"
+  ],
+  "author": "support@innovixx.co.uk",
+  "license": "MIT",
+  "peerDependencies": {
+    "next": "^15.0.0",
+    "payload": "^3.2.2",
+    "react": "^19.0.0-rc-65a56d0e-20241020"
+  },
+  "devDependencies": {
+    "@payloadcms/eslint-config": "^1.1.1",
+    "@payloadcms/translations": "^3.2.1",
+    "@payloadcms/ui": "^3.2.1",
+    "@types/express": "^4.17.9",
+    "@types/node": "18.11.3",
+    "@types/react": "18.0.21",
+    "@types/react-dom": "^18.3.1",
+    "@typescript-eslint/eslint-plugin": "5.12.1",
+    "@typescript-eslint/parser": "5.12.1",
+    "copyfiles": "^2.4.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.19.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "next": "15.0.0",
+    "nodemon": "^2.0.6",
+    "payload": "^3.2.2",
+    "prettier": "^2.7.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "ts-node": "^9.1.1",
+    "typescript": "4.8.4"
+  },
+  "files": [
+    "dist",
+    "types.js",
+    "types.d.ts"
+  ],
+  "dependencies": {
+    "deepmerge": "^4.3.1"
+  }
+}
