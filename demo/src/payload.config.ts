@@ -18,7 +18,7 @@ console.log(path.resolve(dirname))
 export default buildConfig({
   admin: {
     importMap: {
-      baseDir: '/',
+      baseDir: path.resolve(dirname),
     },
     user: Users.slug,
   },
