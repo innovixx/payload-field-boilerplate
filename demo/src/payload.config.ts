@@ -10,13 +10,15 @@ import Posts from './collections/Posts'
 import Users from './collections/Users'
 import { seed } from './seed'
 
+
+
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
-
+console.log(path.resolve(dirname))
 export default buildConfig({
   admin: {
     importMap: {
-      baseDir: path.resolve(dirname),
+      baseDir: '/',
     },
     user: Users.slug,
   },

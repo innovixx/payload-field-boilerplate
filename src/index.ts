@@ -1,5 +1,4 @@
-import { CustomComponent, Field, FieldClientComponent, FieldServerComponent, TextField } from "payload"
-import { CustomField } from "./components"
+import { Field, TextField } from "payload"
 
 export const customField = (
   options?: Partial<TextField>,
@@ -14,8 +13,13 @@ export const customField = (
       ...rest?.admin,
       components: {
         ...rest?.admin?.components,
-        Field: CustomField as unknown as CustomComponent<FieldClientComponent | FieldServerComponent>,
+        Field: {
+          path: '@innovixx/custom-field',
+          exportName: 'CustomField',
+        },
       },
     },
   } as TextField
 }
+
+export * from './components'

@@ -1,8 +1,7 @@
 // eslint-disable-next-line import/no-relative-packages
 import type { CollectionConfig } from 'payload'
 
-import { customField } from '../../../'
-import { Field } from 'payload'
+import { customField } from '@innovixx/custom-field'
 
 const Pages: CollectionConfig = {
   slug: 'pages',
@@ -12,7 +11,7 @@ const Pages: CollectionConfig = {
       type: 'text',
       required: true,
     },
-    customField() as Field,
+    customField(),
     {
       name: 'slug',
       type: 'text',
