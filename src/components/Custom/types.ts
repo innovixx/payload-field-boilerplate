@@ -1,7 +1,7 @@
+import type { Options } from '@payloadcms/ui'
 import type { StaticDescription, StaticLabel } from 'payload'
 import type { ChangeEvent } from 'react'
 import type React from 'react'
-import type { Options } from '@payloadcms/ui'
 
 export type SharedCustomFieldProps =
   | {

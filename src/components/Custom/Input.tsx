@@ -1,9 +1,11 @@
 'use client'
 import type { ChangeEvent } from 'react'
-import React from 'react'
-import type { CustomInputProps } from './types.js'
-import { useTranslation, fieldBaseClass, FieldLabel, FieldError, FieldDescription, RenderCustomComponent, ReactSelect } from '@payloadcms/ui'
+
 import { getTranslation } from '@payloadcms/translations'
+import { fieldBaseClass, FieldDescription, FieldError, FieldLabel, ReactSelect, RenderCustomComponent, useTranslation } from '@payloadcms/ui'
+import React from 'react'
+
+import type { CustomInputProps } from './types.js'
 // import './index.scss'
 
 export const CustomInput: React.FC<CustomInputProps> = (props) => {
@@ -49,6 +51,7 @@ export const CustomInput: React.FC<CustomInputProps> = (props) => {
         .join(' ')}
       style={style}
     >
+      {/* @ts-expect-error TODO: fix type mismatch */}
       <RenderCustomComponent
         CustomComponent={Label}
         Fallback={
@@ -56,6 +59,7 @@ export const CustomInput: React.FC<CustomInputProps> = (props) => {
         }
       />
       <div className={`${fieldBaseClass}__wrap`}>
+        {/* @ts-expect-error TODO: fix type mismatch */}
         <RenderCustomComponent
           CustomComponent={Error}
           Fallback={<FieldError path={path} showError={showError} />}
@@ -101,6 +105,7 @@ export const CustomInput: React.FC<CustomInputProps> = (props) => {
           />
         )}
         {AfterInput}
+        {/* @ts-expect-error TODO: fix type mismatch */}
         <RenderCustomComponent
           CustomComponent={Description}
           Fallback={<FieldDescription description={description} path={path} />}

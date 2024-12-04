@@ -11,7 +11,9 @@ const Pages: CollectionConfig = {
       type: 'text',
       required: true,
     },
-    customField(),
+    customField({
+      label: 'Custom Field',
+    }),
     {
       name: 'slug',
       type: 'text',

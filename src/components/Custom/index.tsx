@@ -1,14 +1,14 @@
 'use client'
 import type { TextFieldClientComponent } from 'payload'
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
-import type { CustomInputProps } from './types.js'
-import { withCondition, useField, useConfig, useLocale } from '@payloadcms/ui'
-import './index.scss'
-import { CustomInput } from './Input.jsx'
-import { mergeFieldStyles } from '../../utils/mergeFieldStyles.js'
-import { isFieldRTL } from '../../utils/isFIeldRTL.js'
 
-export { CustomInput, CustomInputProps }
+import { useConfig, useField, useLocale, withCondition } from '@payloadcms/ui'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
+
+import './index.scss'
+import { isFieldRTL } from '../../utils/isFIeldRTL.js'
+import { mergeFieldStyles } from '../../utils/mergeFieldStyles.js'
+// eslint-disable-next-line payload/no-jsx-import-statements
+import { CustomInput } from './Input.jsx'
 
 const CustomFieldComponent: TextFieldClientComponent = (props) => {
   const {
@@ -48,7 +48,8 @@ const CustomFieldComponent: TextFieldClientComponent = (props) => {
   )
 
   const {
-    customComponents: { AfterInput = null, BeforeInput = null, Description = null, Error = null, Label = null } = {},
+    // @ts-expect-error TODO: fix type mismatch
+    customComponents: { AfterInput, BeforeInput, Description, Error, Label } = {},
     setValue,
     showError,
     value,
