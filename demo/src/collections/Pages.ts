@@ -1,9 +1,8 @@
-// eslint-disable-next-line import/no-relative-packages
 import type { CollectionConfig } from 'payload'
 
 import { customField } from '@innovixx/custom-field'
 
-const Pages: CollectionConfig = {
+export const Pages: CollectionConfig = {
   slug: 'pages',
   fields: [
     {
@@ -17,10 +16,10 @@ const Pages: CollectionConfig = {
     {
       name: 'slug',
       type: 'text',
-      required: true,
       admin: {
         position: 'sidebar',
       },
+      required: true,
     },
     {
       name: 'excerpt',
@@ -32,5 +31,3 @@ const Pages: CollectionConfig = {
     },
   ],
 }
-
-export default Pages
