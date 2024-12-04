@@ -49,7 +49,6 @@ export const CustomInput: React.FC<CustomInputProps> = (props) => {
         .join(' ')}
       style={style}
     >
-      {/* @ts-ignore-error TODO: investigate type mismatch */}
       <RenderCustomComponent
         CustomComponent={Label}
         Fallback={
@@ -57,7 +56,6 @@ export const CustomInput: React.FC<CustomInputProps> = (props) => {
         }
       />
       <div className={`${fieldBaseClass}__wrap`}>
-        {/* @ts-ignore-error TODO: investigate type mismatch */}
         <RenderCustomComponent
           CustomComponent={Error}
           Fallback={<FieldError path={path} showError={showError} />}
@@ -103,7 +101,6 @@ export const CustomInput: React.FC<CustomInputProps> = (props) => {
           />
         )}
         {AfterInput}
-        {/* @ts-ignore-error TODO: investigate type mismatch */}
         <RenderCustomComponent
           CustomComponent={Description}
           Fallback={<FieldDescription description={description} path={path} />}

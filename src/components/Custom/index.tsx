@@ -3,7 +3,7 @@ import type { TextFieldClientComponent } from 'payload'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import type { CustomInputProps } from './types.js'
 import { withCondition, useField, useConfig, useLocale } from '@payloadcms/ui'
-// import './index.scss'
+import './index.scss'
 import { CustomInput } from './Input.jsx'
 import { mergeFieldStyles } from '../../utils/mergeFieldStyles.js'
 import { isFieldRTL } from '../../utils/isFIeldRTL.js'
@@ -131,7 +131,6 @@ const CustomFieldComponent: TextFieldClientComponent = (props) => {
       placeholder={placeholder}
       readOnly={readOnly}
       required={required}
-      // TODO: investigate passing isFieldRtl
       rtl={renderRTL}
       showError={showError}
       style={styles}

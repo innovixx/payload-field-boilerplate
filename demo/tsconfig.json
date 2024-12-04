@@ -31,7 +31,7 @@
       ],
       "@innovixx/custom-field": [
         "../"
-      ]
+      ],
     },
     "target": "ES2022"
   },
