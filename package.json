@@ -49,7 +49,7 @@
     "react": "19.0.0-rc-65a56d0e-20241020",
     "react-dom": "19.0.0-rc-65a56d0e-20241020",
     "ts-node": "^9.1.1",
-    "typescript": "4.8.4"
+    "typescript": "5.7.2"
   },
   "files": [
     "dist",

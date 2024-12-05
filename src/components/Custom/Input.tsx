@@ -6,7 +6,8 @@ import { fieldBaseClass, FieldDescription, FieldError, FieldLabel, ReactSelect, 
 import React from 'react'
 
 import type { CustomInputProps } from './types.js'
-// import './index.scss'
+
+import './index.scss'
 
 export const CustomInput: React.FC<CustomInputProps> = (props) => {
   const {
@@ -51,7 +52,6 @@ export const CustomInput: React.FC<CustomInputProps> = (props) => {
         .join(' ')}
       style={style}
     >
-      {/* @ts-expect-error TODO: fix type mismatch */}
       <RenderCustomComponent
         CustomComponent={Label}
         Fallback={
@@ -59,7 +59,6 @@ export const CustomInput: React.FC<CustomInputProps> = (props) => {
         }
       />
       <div className={`${fieldBaseClass}__wrap`}>
-        {/* @ts-expect-error TODO: fix type mismatch */}
         <RenderCustomComponent
           CustomComponent={Error}
           Fallback={<FieldError path={path} showError={showError} />}
@@ -91,21 +90,23 @@ export const CustomInput: React.FC<CustomInputProps> = (props) => {
             value={valueToRender}
           />
         ) : (
-          <input
-            data-rtl={rtl}
-            disabled={readOnly}
-            id={`field-${path?.replace(/\./g, '__')}`}
-            name={path}
-            onChange={onChange as (e: ChangeEvent<HTMLInputElement>) => void}
-            onKeyDown={onKeyDown}
-            placeholder={getTranslation(placeholder, i18n)}
-            ref={inputRef}
-            type="text"
-            value={value || ''}
-          />
+          <>
+            <input
+              data-rtl={rtl}
+              disabled={readOnly}
+              id={`field-${path?.replace(/\./g, '__')}`}
+              name={path}
+              onChange={onChange as (e: ChangeEvent<HTMLInputElement>) => void}
+              onKeyDown={onKeyDown}
+              placeholder={getTranslation(placeholder, i18n)}
+              ref={inputRef}
+              type="text"
+              value={value || ''}
+            />
+            <span>123</span>
+          </>
         )}
         {AfterInput}
-        {/* @ts-expect-error TODO: fix type mismatch */}
         <RenderCustomComponent
           CustomComponent={Description}
           Fallback={<FieldDescription description={description} path={path} />}

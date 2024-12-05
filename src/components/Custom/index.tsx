@@ -2,11 +2,13 @@
 import type { TextFieldClientComponent } from 'payload'
 
 import { useConfig, useField, useLocale, withCondition } from '@payloadcms/ui'
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
-
-import './index.scss'
 import { isFieldRTL } from '../../utils/isFIeldRTL.js'
 import { mergeFieldStyles } from '../../utils/mergeFieldStyles.js'
+
+import './index.scss'
+
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
+
 // eslint-disable-next-line payload/no-jsx-import-statements
 import { CustomInput } from './Input.jsx'
 
@@ -48,7 +50,6 @@ const CustomFieldComponent: TextFieldClientComponent = (props) => {
   )
 
   const {
-    // @ts-expect-error TODO: fix type mismatch
     customComponents: { AfterInput, BeforeInput, Description, Error, Label } = {},
     setValue,
     showError,
@@ -89,6 +90,7 @@ const CustomFieldComponent: TextFieldClientComponent = (props) => {
 
   useEffect(() => {
     if (hasMany && Array.isArray(value)) {
+      // eslint-disable-next-line @eslint-react/hooks-extra/no-direct-set-state-in-use-effect
       setValueToRender(
         value.map((val, index) => {
           return {

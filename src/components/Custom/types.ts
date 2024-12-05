@@ -1,4 +1,4 @@
-import type { Options } from '@payloadcms/ui'
+import type { Option, ReactSelectAdapterProps } from '@payloadcms/ui/dist/elements/ReactSelect/types'
 import type { StaticDescription, StaticLabel } from 'payload'
 import type { ChangeEvent } from 'react'
 import type React from 'react'
@@ -10,8 +10,7 @@ export type SharedCustomFieldProps =
   }
   | {
     readonly hasMany?: true
-    // TODO: find types for this
-    readonly onChange?: any
+    readonly onChange?: ReactSelectAdapterProps['onChange']
   }
 
 export type CustomInputProps = {
@@ -36,6 +35,5 @@ export type CustomInputProps = {
   readonly showError?: boolean
   readonly style?: React.CSSProperties
   readonly value?: string
-  // TODO: find types for this
-  readonly valueToRender?: any
+  readonly valueToRender?: Option[]
 } & SharedCustomFieldProps

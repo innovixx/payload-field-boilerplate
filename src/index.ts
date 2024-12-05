@@ -1,4 +1,4 @@
-import { Field, TextField } from "payload"
+import type { Field, TextField } from "payload"
 
 export const customField = (
   options?: Partial<TextField>,
@@ -7,15 +7,15 @@ export const customField = (
 
   return {
     ...rest,
-    type: 'text',
     name: name || 'custom',
+    type: 'text',
     admin: {
       ...rest?.admin,
       components: {
         ...rest?.admin?.components,
         Field: {
-          path: '@innovixx/custom-field',
           exportName: 'CustomField',
+          path: '@innovixx/custom-field',
         },
       },
     },
