@@ -2,12 +2,11 @@
 import type { TextFieldClientComponent } from 'payload'
 
 import { useConfig, useField, useLocale, withCondition } from '@payloadcms/ui'
-import { isFieldRTL } from '../../utils/isFIeldRTL.js'
-import { mergeFieldStyles } from '../../utils/mergeFieldStyles.js'
-
-import './index.scss'
-
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
+
+import { isFieldRTL } from '../../utils/isFIeldRTL.js'
+import './index.scss'
+import { mergeFieldStyles } from '../../utils/mergeFieldStyles.js'
 
 // eslint-disable-next-line payload/no-jsx-import-statements
 import { CustomInput } from './Input.jsx'

@@ -1,6 +1,6 @@
 import type { CollectionConfig } from 'payload'
 
-import { customField } from '@innovixx/custom-field'
+import { customField } from '@innovixx/payload-field-boilerplate'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',

@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "lib": [
       "DOM",
       "DOM.Iterable",
@@ -22,6 +21,7 @@
         "name": "next"
       }
     ],
+    "baseUrl": "./",
     "paths": {
       "@/*": [
         "./src/*"
@@ -29,16 +29,21 @@
       "@payload-config": [
         "./src/payload.config.ts"
       ],
-      "@innovixx/custom-field": [
-        "../"
+      "@innovixx/payload-field-boilerplate": [
+        "../dist"
+      ],
+      "@innovixx/payload-field-boilerplate/components": [
+        "../dist/components"
       ],
     },
     "target": "ES2022"
   },
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "../src/**/*.ts",
+    "../src/**/*.tsx",
+    "next.config.mjs",
     ".next/types/**/*.ts"
   ],
   "exclude": [
