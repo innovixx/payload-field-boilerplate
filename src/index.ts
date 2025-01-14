@@ -14,12 +14,9 @@ export const customField = (
       components: {
         ...rest?.admin?.components,
         Field: {
-          exportName: 'CustomField',
-          path: '@innovixx/custom-field',
+          path: '@innovixx/custom-field/components#CustomField',
         },
       },
     },
   } as TextField
 }
-
-export * from './components'
