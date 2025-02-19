@@ -7,7 +7,6 @@ export const defaultESLintIgnores = [
   '**/.git',
   '**/tsconfig.tsbuildinfo',
   '**/README.md',
-  '**/eslint.config.js',
   '**/dist/',
   '**/node_modules/',
 ]

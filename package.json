@@ -11,7 +11,10 @@
     "copy:scss": "copyfiles -u 1 \"src/**/*.scss\" dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src",
-    "lint:fix": "eslint --fix --ext .ts,.tsx src"
+    "lint:fix": "eslint --fix --ext .ts,.tsx src",
+    "lint-staged": "lint-staged --verbose",
+    "stylelint": "stylelint \"**/*.scss\"",
+    "prepare": "husky"
   },
   "keywords": [
     "payload",
@@ -25,27 +28,30 @@
   "peerDependencies": {
     "next": "^15.0.0",
     "payload": "^3.2.2",
-    "react": "^19.0.0-rc-65a56d0e-20241020"
+    "react": "^19.0.0"
   },
   "devDependencies": {
-    "@payloadcms/eslint-config": "^3.0.0",
-    "@payloadcms/eslint-plugin": "^3.0.0",
+    "@innovixx/eslint-config": "3.0.5",
+    "@innovixx/stylelint-config": "^0.0.5",
+    "@payloadcms/eslint-config": "^3.9.0",
+    "@payloadcms/eslint-plugin": "^3.9.0",
     "@payloadcms/next": "3.2.2",
     "@payloadcms/translations": "3.2.2",
     "@payloadcms/ui": "3.2.2",
     "@types/node": "^20.14.14",
-    "@types/react": "npm:types-react@19.0.0-rc.1",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
-    "@typescript-eslint/eslint-plugin": "5.12.1",
-    "@typescript-eslint/parser": "5.12.1",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "copyfiles": "^2.4.1",
     "cross-env": "^7.0.3",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
     "next": "15.0.0",
     "nodemon": "^2.0.6",
     "payload": "3.2.2",
-    "prettier": "^2.7.1",
-    "react": "19.0.0-rc-65a56d0e-20241020",
-    "react-dom": "19.0.0-rc-65a56d0e-20241020",
+    "prettier": "^3.5.1",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "stylelint": "^16.4.1",
     "ts-node": "^9.1.1",
     "typescript": "5.7.2"
   },
@@ -69,14 +75,10 @@
   "dependencies": {
     "deepmerge": "^4.3.1"
   },
-  "pnpm": {
-    "overrides": {
-      "@types/react": "npm:types-react@19.0.0-rc.1",
-      "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
-    }
-  },
-  "overrides": {
-    "@types/react": "npm:types-react@19.0.0-rc.1",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+  "lint-staged": {
+    "**/*.{js,ts,jsx,tsx}": [
+      "eslint",
+      "bash -c tsc"
+    ]
   }
 }
